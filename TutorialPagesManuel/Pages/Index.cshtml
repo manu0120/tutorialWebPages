@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <form method="post">
+        <label for="hora">Introduce la hora: </label>
+        <input type="text" name="hora"/>
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+
+@if(Model.Mensaje != null){
+    <p>@Model.Mensaje</p>
+}
+
+<hr />
+<br /> 
+<div>
+    <form method="get" asp-page="Saludo">
+        <label for="nombre">Introduce tu nombre:</label>
+        <input type="text" name="nombre" id="nombre" />
+        <button type="submit" class="btn btn-dark">Saludo personalizado</button>
+    </form>
+</div>
